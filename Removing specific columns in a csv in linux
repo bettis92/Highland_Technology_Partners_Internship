@@ -1,4 +1,4 @@
-# awk is a text manipulator, "-F" flag is the field separator for the input and i set that to comma, 
+# awk is a text manipulator command-line tool/utility, "-F" flag is the field separator for the input and i set that to comma, 
 #there is not a default flag like this for setting the output field separator to comma, so i have to use "-v" and from my understanding this is "variable" and opens up a bunch of other built in attributes basically, so after 
 #that we do OFS=',' which is output field setting = comma
 # then wen do this print the specific columns we want setion and use dollar signs to specify objects in linux, and we choose the columns of our selection
@@ -6,3 +6,17 @@
 
 
 awk -F ',' -v OFS=',' '{ print $1, $3 }' input.csv > output.csv
+
+gawk -F ',' -v OFS=',' '{ print $1, $3 }' input.csv > output.csv
+
+#gawk is just like an enhanced upgraded awk made by some guys to make it better, this process is exactly the same in gawk
+
+sed 's/[^,]*,//4' | sed 's/[^,]*,//4' | sed 's/[^,]*,//4' | sed 's/[^,]*,//4' | sed 's/[^,]*,//4' input.csv > output.csv
+
+# apparently said is a stream line editor much better for finding and replacing specific values, doing this process of removing specific columns would be much less intuitive.
+#"s" substitutes
+# this is a find and replace function and what replaces it is whats between the // which is nothing, so basically it is a find and replace with nothing aka delete.
+#i have learned in linux that ^ is like a wild card for "starting with" then "*," means including everyting until the unext comma. then after //4 means we do this on the fourth match. we can only do one instance at a time so 
+#we do this on the fourth column (fourth match) and repeat it with 4 more pipes and the same command to remove the fourth column on the newly created product 3 more times. 
+#then we specify the input file we do this on then save with ">" to a new output
+# I see how this is way less intuitive and way harder. 
