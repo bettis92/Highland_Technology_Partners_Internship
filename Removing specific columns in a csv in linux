@@ -1,0 +1,8 @@
+# awk is a text manipulator, "-F" flag is the field separator for the input and i set that to comma, 
+#there is not a default flag like this for setting the output field separator to comma, so i have to use "-v" and from my understanding this is "variable" and opens up a bunch of other built in attributes basically, so after 
+#that we do OFS=',' which is output field setting = comma
+# then wen do this print the specific columns we want setion and use dollar signs to specify objects in linux, and we choose the columns of our selection
+# the we finish off by saving it to another file name with ">"
+
+
+awk -F ',' -v OFS=',' '{ print $1, $3 }' input.csv > output.csv
