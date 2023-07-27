@@ -1,0 +1,4 @@
+This is a test to see if I have successfully linked my github repository 
+"RH" to this virtual linux vm. I am writing this now in VSCode and will
+see if this txt file shows up on my github. I should also see the 
+changes in source control that I can commit.
