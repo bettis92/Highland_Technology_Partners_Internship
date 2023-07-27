@@ -1,0 +1,65 @@
+tmux is a powerful terminal multiplexer tool, which is widely used in Unix-like operating systems. It allows you to create multiple terminal sessions and switch between them easily, all within a single terminal window. This is especially useful when working in a remote server environment where GUI is not available.
+
+The key features of tmux are:
+
+Session Management: You can create, attach, detach, list, and switch between sessions. A session is a single environment that contains one or more windows.
+Window Management: Within a session, you can create, close, switch, split, and navigate between windows. A window fills the entire screen and may be split into rectangular panes.
+Pane Management: You can create, navigate, resize, and rearrange panes within a window.
+To start a new tmux session, you simply type tmux in your terminal. To end the session, you can type exit.
+
+Within a tmux session, commands are triggered by a prefix, which by default is Ctrl-b. After pressing Ctrl-b, you can press another key to perform a specific command. For example, Ctrl-b c will create a new window.
+
+Here are some basic tmux commands:
+
+Ctrl-b c: Create a new window.
+Ctrl-b n: Go to the next window.
+Ctrl-b p: Go to the previous window.
+Ctrl-b l: Go to the last window you were in.
+Ctrl-b d: Detach from the current session.
+tmux attach: Attach to the last session.
+tmux attach -t [session name]: Attach to a specific session.
+Ctrl-b %: Split the current pane vertically.
+Ctrl-b ": Split the current pane horizontally.
+Ctrl-b arrow key: Switch to another pane.
+In your particular situation, using tmux can be very beneficial in a number of ways:
+
+Running Long-Term Processes: If you're running a script that takes a long time to complete, you can start it in a tmux session, then detach from the session and let the script continue running in the background. You can then re-attach to the session later to check on the progress of the script.
+
+Multiple Workspaces: If you're working with multiple CSV files, you can have each file open in its own window or pane within a single tmux session. This makes it easier to switch between different files and tasks.
+
+Resilience to Network Issues: If you're working on a remote server and your connection drops, any work you're doing in a regular SSH session would be lost. But if you're working inside a tmux session, you can just reattach to the session after reconnecting, and all your windows and panes will still be there just as you left them.
+
+Collaborative Work: tmux allows for multiple connections to the same session, so you and your mentor can share a session and see the same terminal output at the same time. This can be useful for pair programming or for getting real-time help with a problem.
+
+In general, learning to use tmux can greatly enhance your productivity and flexibility when working in a terminal environment, especially when working on remote servers.
+
+
+
+
+To list all of your current tmux sessions along with their names, use the tmux list-sessions command (or its shorthand tmux ls). This will give output something like this:
+0: 1 windows (created Wed Jul 26 22:37:01 2023) [80x24]
+mysession: 1 windows (created Wed Jul 26 22:38:25 2023) [80x24]
+
+
+
+
+
+
+
+
+In tmux, you can close panes, windows, and sessions in a few different ways:
+
+Closing panes: You can close a pane simply by exiting the shell or program running in it. This is often done by typing exit or pressing Ctrl-d. If you close all panes within a window, the window itself is closed.
+
+Closing windows: To close a window, you need to close all panes within it. If you want to close the window regardless of the number of panes or what's running in them, you can use the kill-window command. To kill the current window, press Ctrl-b & &. It will ask for confirmation before killing the window.
+
+Closing sessions: To close a session, you need to close all windows within it. If you want to close the session regardless of the number of windows or what's running in them, you can use the kill-session command. To kill the current session, press Ctrl-b & : to get to the command prompt, then type kill-session and press Enter.
+
+Please be aware that closing windows and sessions will also close all the programs running in them. Make sure you've saved any important data and stopped any necessary processes before closing a window or session.
+
+
+
+
+To choose a specific session to attach back to in tmux, you can use the tmux attach-session command (or its shorthand tmux attach) followed by -t and then the name or ID of the session. Here's what the command looks like:
+tmux attach-session -t your_session_name
+
