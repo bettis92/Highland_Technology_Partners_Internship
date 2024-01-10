@@ -5,3 +5,5 @@ The trading data analysis and resampling scripts are the specific tools I create
 Due to the trading information being the private property of Highland Tech Partners, the training information cannot be included here. However, what I have included are the exact outputs my scripts produced, which you can find in the 'Analysis Outputs' folder.
 
 The 'Practice' folder includes residual artifacts from my learning process and progression, enabling me to operate effectively during the internship. Throughout this internship, I learned to utilize Google Cloud and remote SSH connections. I worked in the Linux command line for the first time and used various bash scripts to partially clean, adjust, and standardize data before sending them to my Python scripts for analysis.
+
+The analysis visualizations showcase charts created from the 30-minute window analysis, which visually depict the average profits for each 30-minute window throughout the day. These charts cover each individual month during the 18-month period analyzed, along with a comprehensive chart that aggregates 30-minute profit averages for the entire 18-month duration.
